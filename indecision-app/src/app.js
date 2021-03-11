@@ -6,6 +6,7 @@ var app = {
 	options: ['One', 'Two']
 };
 
+//USING FUNCTION IS TOO COMPLICATED
 function getOptions(options) {
 	if (options.length > 0) {
 		return <p>Here are your options: {options[0] + ', ' + options[1]}</p>
