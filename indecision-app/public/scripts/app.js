@@ -8,21 +8,6 @@ var app = {
 	options: ['One', 'Two']
 };
 
-function getOptions(options) {
-	if (options.length > 0) {
-		return React.createElement(
-			'p',
-			null,
-			'Here are your options: ',
-			options[0] + ', ' + options[1]
-		);
-	} else return React.createElement(
-		'p',
-		null,
-		'No Options'
-	);
-}
-
 var template = React.createElement(
 	'div',
 	null,
@@ -36,7 +21,11 @@ var template = React.createElement(
 		null,
 		app.subtitle
 	),
-	getOptions(app.options),
+	React.createElement(
+		'p',
+		null,
+		app.options.length > 0 ? 'Here are your options' : 'No options'
+	),
 	React.createElement(
 		'ol',
 		null,
