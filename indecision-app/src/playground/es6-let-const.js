@@ -13,7 +13,6 @@ console.log('nameConst', nameConst);
 
 
 // Block scoping
-
 const fullName = 'Vaclav Sekret';
 const firstName;
 
