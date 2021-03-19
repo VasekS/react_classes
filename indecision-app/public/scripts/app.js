@@ -1,37 +1,24 @@
 'use strict';
 
-// function square(x) {
-// 	return x * x;
-// };
-// 
-// console.log(square(3))
-// 
-// //Arrow Functions are announyimos
-// // const squareArrow = (x) => {
-// // 	return x * x;
-// // };
-// 
-// //expression syntax, identical as above
-// const squareArrow = (x) => x * x;
-// 
-// 
-// console.log(squareArrow(10));
+// arguments object - no longer bound with arrow fction
 
-//Challenge - Use Arrow functions ES6
-//getFristname ('Mike Smith') -> "Mike"
-//Create regular arrow function
-//Create arrow func using the shorthand syntax
-
-
-var getFirstName = function getFirstName(fullName) {
-	return fullName.split(' ')[0];
+var add = function add(a, b) {
+	//console.log(arguments);
+	return a + b;
 };
+console.log(add(5, 6));
 
-console.log(getFirstName('Vaclav Smith'));
+// this keyboard - no longer bound
 
-//shorthand
-var getFirstNameArrow = function getFirstNameArrow(fullName) {
-	return fullName.split(' ')[0];
+var user = {
+	name: 'Vasek',
+	cities: ['Los Angeles', 'London', 'Opava'],
+	printPlacesLived: function printPlacesLived() {
+		var _this = this;
+
+		return this.cities.map(function (city) {
+			return _this.name + ' has lived in ' + city;
+		});
+	}
 };
-
-console.log(getFirstNameArrow('Tobby Smith'));
+console.log(user.printPlacesLived());
