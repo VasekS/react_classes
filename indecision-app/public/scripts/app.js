@@ -1,75 +1,90 @@
 'use strict';
 
-var visibility = false;
+console.log('App.js is running!');
 
-var toggleVisibility = function toggleVisibility() {
-	visibility = !visibility;
-	renderVisibilityApp();
+var app = {
+	title: 'Indecision App',
+	subtitle: 'Put your life in the hands of a computer',
+	options: []
+};
+
+var onFormSubmit = function onFormSubmit(e) {
+	e.preventDefault(); //will stop full page refresh
+
+	var option = e.target.elements.option.value; //e.target point to form element
+
+	if (option) {
+		app.options.push(option);
+		e.target.elements.option.value = '';
+		renderIndecisionApp();
+	}
+};
+
+var removeAll = function removeAll() {
+	app.options = [];
+	renderIndecisionApp();
+};
+
+var onMakeDecision = function onMakeDecision() {
+	var randomNum = Math.floor(Math.random() * app.options.length);
+	var option = app.options[randomNum];
+	alert(option);
 };
 
 var appRoot = document.getElementById('app');
 
-var renderVisibilityApp = function renderVisibilityApp() {
-	var visibilityToggle = React.createElement(
+var renderIndecisionApp = function renderIndecisionApp() {
+	var template = React.createElement(
 		'div',
 		null,
 		React.createElement(
 			'h1',
 			null,
-			'Visibility App'
+			app.title
+		),
+		app.subtitle && React.createElement(
+			'p',
+			null,
+			app.subtitle
+		),
+		React.createElement(
+			'p',
+			null,
+			app.options.length > 0 ? 'Here are your options' : 'There are no options'
 		),
 		React.createElement(
 			'button',
-			{ onClick: toggleVisibility },
-			visibility ? 'Hide details' : 'Show Details'
+			{ disabled: app.options.length === 0, onClick: onMakeDecision },
+			'What should I do?'
 		),
-		visibility && React.createElement(
-			'div',
+		React.createElement(
+			'button',
+			{ onClick: removeAll },
+			'Remove All'
+		),
+		React.createElement(
+			'ol',
 			null,
+			app.options.map(function (option) {
+				return React.createElement(
+					'li',
+					{ key: option },
+					option
+				);
+			})
+		),
+		React.createElement(
+			'form',
+			{ onSubmit: onFormSubmit },
+			React.createElement('input', { type: 'text', name: 'option' }),
 			React.createElement(
-				'p',
+				'button',
 				null,
-				'Hey. These are some details here!'
+				'Add Option'
 			)
 		)
 	);
-
-	ReactDOM.render(visibilityToggle, appRoot);
+	ReactDOM.render(template, appRoot);
 };
 
-renderVisibilityApp();
-
-//MY SOLUTION
-// console.log('App.js is running!');
-// 
-// 
-// const app = {
-// 	title: 'Visibility Toggle'
-// };
-// 
-// let buttonBool = false;
-// 
-// const onShowDetails = () => {
-// 	console.log('its working');
-// 	if (buttonBool === false) {
-// 		buttonBool = true;
-// 	} else {
-// 		buttonBool = false;
-// 	}
-// 	renderVisibilityApp();
-// };
-// 
-// const appRoot = document.getElementById('app');
-// 
-//  const renderVisibilityApp = () => {
-// 	const visibilityToggle = (
-// 		<div>
-// 			<h1>{app.title}</h1>
-// 			<button onClick={onShowDetails}>{buttonBool === false ? 'Show Details' : 'Hide Details'}</button>
-// 			<p>{buttonBool === true ? 'Hey. There are some details you can now see!' : ' '}</p>
-// 		</div>
-// 	);
-//  	ReactDOM.render(visibilityToggle, appRoot);
-//  };
-// 
-//  renderVisibilityApp();
+renderIndecisionApp();
