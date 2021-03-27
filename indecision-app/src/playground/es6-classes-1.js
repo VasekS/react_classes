@@ -4,7 +4,7 @@ class Person {
 		this.age = age;
 	}
 	getGreeting() {
-		// 'Hi. I am ' + this.name + '!';
+		// 'Hi. I am ' + this.name + '!' the below --> better;
 		return `Hi. I am ${this.name}!`; //template string with inject string
 	}
 	getDescription() {
