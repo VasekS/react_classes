@@ -1,31 +1,66 @@
-let visibility = false;
+class VisibilityToggle extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
+		this.state = {
+			visibility: false
+		};
+	}
+	handleToggleVisibility() {
+		this.setState((prevState) => {
+			return {
+				visibility: !prevState.visibility
+			};
+		});
+	}
+	render() {
+		return(
+			<div>
+				<h1>Visibility App</h1>
+				<button onClick={this.handleToggleVisibility}>
+					{this.state.visibility ? 'Hide details' : 'Show Details'}
+				</button>
+				{this.state.visibility && (
+ 				<div>
+ 					<p>Hey. These are some details here!</p>
+ 				</div>
+ 			)}
+			</div>
+			);
+	}
+}
 
-const toggleVisibility = () => {
-	visibility = !visibility;
-	renderVisibilityApp();
-};
+ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
 
-const appRoot = document.getElementById('app');
 
-const renderVisibilityApp = () => {
-	const visibilityToggle = (
-		<div>
-			<h1>Visibility App</h1>
-			<button onClick={toggleVisibility}>
-				{visibility ? 'Hide details' : 'Show Details'}	
-			</button>
-			{visibility && (
-				<div>
-					<p>Hey. These are some details here!</p>
-				</div>
-			)}
-		</div>
-	);
-
-	ReactDOM.render(visibilityToggle, appRoot);
-};
-
-renderVisibilityApp();
+// let visibility = false;
+// 
+// const toggleVisibility = () => {
+// 	visibility = !visibility;
+// 	renderVisibilityApp();
+// };
+// 
+// const appRoot = document.getElementById('app');
+// 
+// const renderVisibilityApp = () => {
+// 	const visibilityToggle = (
+// 		<div>
+// 			<h1>Visibility App</h1>
+// 			<button onClick={toggleVisibility}>
+// 				{visibility ? 'Hide details' : 'Show Details'}	
+// 			</button>
+// 			{visibility && (
+// 				<div>
+// 					<p>Hey. These are some details here!</p>
+// 				</div>
+// 			)}
+// 		</div>
+// 	);
+// 
+// 	ReactDOM.render(visibilityToggle, appRoot);
+// };
+// 
+// renderVisibilityApp();
 
 //MY SOLUTION
 // console.log('App.js is running!');
