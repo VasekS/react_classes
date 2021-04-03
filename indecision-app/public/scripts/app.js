@@ -30,16 +30,18 @@ var Counter = function (_React$Component) {
 	_createClass(Counter, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			// try {
-			var json = localStorage.getItem('count');
-			var count = JSON.parse(json);
+			try {
+				var json = localStorage.getItem('count');
+				var count = JSON.parse(json);
 
-			// if (count) {
-			// 	this.setState(() => ({ count }));
-			// 	}
-			// } catch (e) {
-			// 	//Do nothing at all
-			// }
+				if (count) {
+					this.setState(function () {
+						return { count: count };
+					});
+				}
+			} catch (e) {
+				//Do nothing at all
+			}
 		}
 	}, {
 		key: 'componentDidUpdate',
