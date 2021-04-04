@@ -24,32 +24,21 @@ var Counter = function (_React$Component) {
 		};
 		return _this;
 	}
-	//Lifecycle Methods
-
 
 	_createClass(Counter, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			try {
-				var json = localStorage.getItem('count');
-				var count = JSON.parse(json);
-
-				if (count) {
-					this.setState(function () {
-						return { count: count };
-					});
-				}
-			} catch (e) {
-				//Do nothing at all
-			}
+			var json = localStorage.getItem('count');
+			var count = JSON.parse(json);
+			this.setState(function () {
+				return { count: count };
+			});
 		}
 	}, {
 		key: 'componentDidUpdate',
 		value: function componentDidUpdate(prevProps, prevState) {
-			if (prevState.count.length !== this.state.count.length) {
-				var json = JSON.stringify(this.state.count);
-				localStorage.setItem('count', json);
-			}
+			var json = JSON.stringify(this.state.count);
+			localStorage.setItem('count', json);
 		}
 	}, {
 		key: 'handleAddOne',
