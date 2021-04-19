@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
 import Header from '../components/Header';
 import PortfolioDashboardpage from '../components/PortfolioDashboardpage';
+import HomePage from '../components/HomePage';
 import NotFoundPage from '../components/NotFoundPage';
 
 
@@ -10,6 +11,7 @@ const AppRouter = () => (
 		<div>
 			<Header />
 				<Switch>
+				<Route path="/"component={HomePage} />
 				<Route path="/portfolio"component={PortfolioDashboardpage} />
 				<Route component={NotFoundPage} />
 			</Switch>
