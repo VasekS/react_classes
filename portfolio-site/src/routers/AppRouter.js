@@ -14,11 +14,10 @@ const AppRouter = () => (
 		<div>
 			<Header />
 				<Switch>
-				<Route path="/"component={HomePage} exact={true}/>
-				<Route path="/portfolio"component={PortfolioDashboardpage} exact={true}/>
-				<Route path="/portfolio/1"component={Portfolio1} />
-				<Route path="/portfolio/2"component={Portfolio2} />
-				<Route path="/contact"component={Contact} />
+				<Route path="/" component={HomePage} exact={true} />
+				<Route path="/portfolio" component={PortfolioDashboardpage} exact={true} />
+				<Route path="/portfolio/:id" component={Portfolio1} />
+				<Route path="/contact" component={Contact} />
 				<Route component={NotFoundPage} />
 			</Switch>
 		</div>
