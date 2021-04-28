@@ -9,7 +9,8 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water Bill' }));
+const newExpense = addExpense();
+console.log(newExpense());
 
 console.log(store.getState());
 
