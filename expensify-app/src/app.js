@@ -9,6 +9,7 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
+//Challenge
 const newExpense = addExpense();
 console.log(newExpense());
 
