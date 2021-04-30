@@ -10,8 +10,10 @@ import './styles/styles.scss';
 const store = configureStore();
 
 //Challenge
-const newExpense = addExpense();
-console.log(newExpense());
+// const newExpense = addExpense({description: 'Water'});
+const expenseOne = store.dispatch(addExpense({ description: 'HOA', amount: 100, createdAt: -21000 }));
+
+console.log(expenseOne());
 
 console.log(store.getState());
 
