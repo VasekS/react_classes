@@ -11,6 +11,7 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
+//Challenge
 store.dispatch(addExpense({ description: 'Water bill' }));
 store.dispatch(addExpense({ description: 'Gas bill' }));
 
