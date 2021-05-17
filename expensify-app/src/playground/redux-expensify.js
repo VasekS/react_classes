@@ -173,11 +173,11 @@ store.subscribe(() => {
   store.dispatch(setTextFilter(''));
  // 
   store.dispatch(sortByAmount()); // amount
- // store.dispatch(sortByDate()); // date
+  store.dispatch(sortByDate()); // date
 
- // store.dispatch(setStartDate(0));
- // store.dispatch(setStartDate());
-  // store.dispatch(setEndDate(999));
+  store.dispatch(setStartDate(0));
+  store.dispatch(setStartDate());
+   store.dispatch(setEndDate(999));
 
 const demoState = {
 	expenses: [{
