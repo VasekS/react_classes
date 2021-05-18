@@ -32,4 +32,3 @@ const filtersReducerDefaultState = {
 	startDate: undefined,
 	endDate: undefined
 };
-
