@@ -37,7 +37,3 @@ export default(state = filtersReducerDefaultState, action) => {
 			return state;
 	}
 };
-
-// timestamps (milliseconds)
-// Jan 1st 1970 (unix epoch) day 0
-
