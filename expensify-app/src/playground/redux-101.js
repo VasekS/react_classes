@@ -72,6 +72,3 @@ store.dispatch(decremenCount());
 store.dispatch(decremenCount({ decrementBy: 10 }));
 
 store.dispatch(setCount({ count: 105 }));
-
-
-
