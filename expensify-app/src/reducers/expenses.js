@@ -24,7 +24,6 @@ export default (state = expenseReducerDefaultState, action) => {
 			return state;
 	}
 };
-
 // Filters reducer
 const filtersReducerDefaultState = {
 	text: '',
