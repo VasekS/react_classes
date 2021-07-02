@@ -1,5 +1,5 @@
 //Higher Order Components (HOC) - A component (HOC) that renders another component
-// Goal - reuse code
+// Goal - reusable code
 // Render hijacking
 // Prop manipulation
 // Abstract state
