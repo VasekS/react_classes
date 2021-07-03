@@ -128,9 +128,6 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
 	}
 };
 
-// timestamps (milliseconds)
-// Jan 1st 1970 (unix epoch) day 0
-
 
 // Get visible expenses
 const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
