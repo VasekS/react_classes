@@ -1,8 +1,5 @@
 //Higher Order Components (HOC) - A component (HOC) that renders another component
 // Goal - reusable code
-// Render hijacking
-// Prop manipulation
-// Abstract state
 
 import React from 'react';
 import ReactDOM from 'react-dom';
