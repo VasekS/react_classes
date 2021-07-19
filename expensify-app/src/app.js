@@ -12,9 +12,9 @@ import './styles/styles.scss';
 
 const store = configureStore();
 
-//Challenge
 store.dispatch(addExpense({ description: 'Water bill', amount: 4500 }));
-store.dispatch(addExpense({ description: 'Gas bill' }));
+store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 109500 }));
 store.dispatch(setTextFilter({ text: 'water' }));
 
 // setTimeout(() => {
